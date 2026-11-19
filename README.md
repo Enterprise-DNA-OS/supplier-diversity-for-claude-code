@@ -96,4 +96,4 @@ Source records, certificate evidence, commitments, spend, notes and activity are
 
 npm test isolates a temporary PGlite database and exercises every CLI verb, import rollback, source separation, repeated evidence, currency checks, certificate boundaries, privacy review findings, drafts and escaped reports. TEST_DATABASE_URL is only for a disposable empty database. [Validation evidence](docs/validation.md).
 
-Built and optionally operated through [Omni by Enterprise DNA](https://enterprisedna.co/omni/instead-of/b2gnow).
+Built and optionally operated through [Omni by Enterprise DNA](https://enterprisedna.co/omni/instead-of/b2gnow?utm_source=github&utm_medium=readme&utm_campaign=b2gnow).
