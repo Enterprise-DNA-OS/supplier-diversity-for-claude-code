@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Recorded participation",
+    "ask": "How much of our paid spend has dated supplier evidence?",
+    "command": "npm run diversity -- participation",
+    "output": "  programme                      currency  total paid  evidence covered  evidence share pct  goal %  committed\n  -----------------------------  --------  ----------  ----------------  ------------------  ------  ---------\n  Fictional Local Purchasing     NZD       $10,000.00  $3,000.00         30.00               40.00   $8,000.00\n  Fictional Regional Purchasing  AUD       $1,000.00   $1,000.00         100.00              30.00   $0.00"
+  },
+  {
+    "title": "Certificates to review",
+    "ask": "Which supplier certificates need attention this month?",
+    "command": "npm run diversity -- cert-expiry",
+    "output": "  supplier                    scheme               valid to    issuer                    \n  --------------------------  -------------------  ----------  --------------------------\n  Fictional Harbour Services  Demo local supplier  2026-10-10  Fictional programme office\n  Fictional Harbour Supplies  Demo local supplier  2026-12-04  Fictional programme office\n  Fictional Harbour Supplies  Demo local supplier  2026-12-09  Fictional programme office"
+  },
+  {
+    "title": "The weekly worklist",
+    "ask": "Who owns the overdue supplier programme work?",
+    "command": "npm run diversity -- attention",
+    "output": "  kind         programme                   detail                                owner  due       \n  -----------  --------------------------  ------------------------------------  -----  ----------\n  certificate  Fictional Harbour Services  Demo local supplier evidence expires  Casey  2026-10-10\n  supplier     Fictional Harbour Supplies  Accuracy review due                   Alex   2026-11-11\n  action       Fictional Local Purchasing  Request current certificate evidence  Casey  2026-11-15\n  report       Fictional Local Purchasing  Programme report due                  Casey  2026-11-16\n  certificate  Fictional Harbour Supplies  Demo local supplier evidence expires  Alex   2026-12-04\n  certificate  Fictional Harbour Supplies  Demo local supplier evidence expires  Alex   2026-12-09"
+  }
+]

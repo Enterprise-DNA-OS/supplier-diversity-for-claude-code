@@ -1,13 +1,20 @@
 [
   {
     "name": "week",
-    "title": "This week",
-    "subtitle": "Supplier Diversity for Claude Code: what needs attention, rendered by npm run view",
+    "title": "Supplier programme review",
+    "subtitle": "Internal evidence coverage. No statutory credit calculation. Fictional data until replaced.",
     "sections": [
       {
+        "title": "Recorded participation",
+        "sql": "SELECT * FROM participation_review ORDER BY programme"
+      },
+      {
         "title": "Needs attention",
-        "note": "TODO(author): point this at the industry's attention view (overdue, stuck, quiet).",
-        "sql": "select 'replace me' as item, 'TODO(author)' as why"
+        "sql": "SELECT * FROM attention_review ORDER BY due"
+      },
+      {
+        "title": "Record checks",
+        "sql": "SELECT * FROM compliance_findings ORDER BY rule"
       }
     ]
   }

@@ -1,11 +1,46 @@
 [
   {
-    "name": "example",
-    "title": "TODO(author): the first document this industry must produce",
-    "for_each": "select gen_random_uuid() as id, 'Example' as name",
+    "name": "participation-brief",
+    "title": "Supplier participation evidence brief",
+    "for_each": "SELECT id,name FROM programmes ORDER BY name",
     "file": "name",
     "sections": [
-      { "title": "Details", "sql": "select 'replace me' as item, $1::text as record_id" }
+      {
+        "title": "Programme",
+        "sql": "SELECT name,owner,currency,scheme,start_date,end_date,report_due FROM programmes WHERE id=$1",
+        "layout": "record"
+      },
+      {
+        "title": "Evidence coverage",
+        "sql": "SELECT * FROM participation_review WHERE programme_id=$1",
+        "note": "Internal paid-spend evidence share only. Not a statutory DBE, MBE or WBE credit determination."
+      },
+      {
+        "title": "Evidence exceptions",
+        "sql": "SELECT supplier,external_id,paid_date,has_dated_evidence,in_period FROM spend_evidence WHERE programme_id=$1 AND (NOT in_period OR NOT has_dated_evidence)"
+      },
+      {
+        "title": "Actions",
+        "sql": "SELECT title,owner,due,state,closure_evidence FROM actions WHERE programme_id=$1 ORDER BY due"
+      }
+    ]
+  },
+  {
+    "name": "supplier-evidence",
+    "title": "Supplier evidence review",
+    "for_each": "SELECT id,name FROM suppliers ORDER BY name",
+    "file": "name",
+    "sections": [
+      {
+        "title": "Supplier record",
+        "sql": "SELECT name,owner,review_due,retention_review_due,source_ref FROM suppliers WHERE id=$1",
+        "layout": "record"
+      },
+      {
+        "title": "Certificates recorded",
+        "sql": "SELECT scheme,issuer,valid_from,valid_to,reviewed_by,evidence_ref FROM certificates WHERE supplier_id=$1 ORDER BY valid_to",
+        "note": "Evidence is supplied and reviewed by the operator. No external certification is granted or verified by this system."
+      }
     ]
   }
 ]

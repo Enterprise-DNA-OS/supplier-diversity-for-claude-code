@@ -1,0 +1,19 @@
+{
+  "source": "fictional-export-instance",
+  "source_ref": "Fictional mapped report fixture; illustrative headers, not vendor defaults",
+  "files": [
+    {
+      "kind": "suppliers",
+      "path": "suppliers.csv",
+      "expected_count": 1,
+      "columns": {
+        "external_id": "Vendor ID",
+        "name": "Business name",
+        "owner": "Record owner",
+        "review_due": "Accuracy review",
+        "retention_review_due": "Retention review",
+        "source_ref": "Provenance"
+      }
+    }
+  ]
+}
