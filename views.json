@@ -6,7 +6,7 @@
     "sections": [
       {
         "title": "Recorded participation",
-        "sql": "SELECT * FROM participation_review ORDER BY programme"
+        "sql": "SELECT programme,currency,total_paid_cents,evidence_covered_cents,evidence_share_pct,goal_bps,committed_cents FROM participation_review ORDER BY programme"
       },
       {
         "title": "Needs attention",

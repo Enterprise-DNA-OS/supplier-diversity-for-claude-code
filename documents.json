@@ -12,8 +12,9 @@
       },
       {
         "title": "Evidence coverage",
-        "sql": "SELECT * FROM participation_review WHERE programme_id=$1",
-        "note": "Internal paid-spend evidence share only. Not a statutory DBE, MBE or WBE credit determination."
+        "sql": "SELECT currency,total_paid_cents,evidence_covered_cents,evidence_share_pct,goal_bps,committed_cents FROM participation_review WHERE programme_id=$1",
+        "note": "Internal paid-spend evidence share only. Not a statutory DBE, MBE or WBE credit determination.",
+        "layout": "record"
       },
       {
         "title": "Evidence exceptions",
